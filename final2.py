@@ -1,6 +1,7 @@
 import random
 import string
 import pyperclip
+import time
 
 # List of Hindi words transliterated to English (you can extend this list)
 hindi_words_transliterated = [
@@ -108,6 +109,10 @@ try:
             # Checking if passworf copied to clipboard
             if copied_text == password[choice-1]:
                 print("Variable copied to clipboard successfully!")
+                savechoice = input("What app or account do you want to save this with: ")
+                row = [password[choice-1],savechoice]
+                print(row)
+                time.sleep(3)
             else:
                 print("Copying to clipboard failed.")
             break
