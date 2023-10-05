@@ -73,19 +73,20 @@ def generate_strong_password(password_length):
     return password, readable
 
 
-def generate_passwords():
+def generate_passwords(num_passwords=4):
     password_length = 11
-    p1, p1_r = generate_strong_password(password_length)
-    p2, p2_r = generate_strong_password(password_length)
-    p3, p3_r = generate_strong_password(password_length)
-    p4, p4_r = generate_strong_password(password_length)
-    password = [p1, p2, p3, p4]
-    readables = [p1_r, p2_r, p3_r, p4_r]
+    passwords = []
+    readables = []
 
-    for i, each in enumerate(password):
+    for _ in range(num_passwords):
+        password, readable = generate_strong_password(password_length)
+        passwords.append(password)
+        readables.append(readable)
+
+    for i, each in enumerate(passwords):
         print(f"Generated Strong Password: {i + 1}. {readables[i]} - {each}")
 
-    return password
+    return passwords
 
 
 def main():
