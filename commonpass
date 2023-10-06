@@ -1,0 +1,14 @@
+import requests
+
+def is_common_password(password):
+    try:
+        # Read common passwords from a local file
+        filepath = "G:\\PY\\passowordgen\\common_passwords.txt"
+        with open(filepath, 'r') as file:
+            common_passwords = set(file.read().splitlines())
+
+        # Check if the password is in the list of common passwords
+        return password in common_passwords
+    except FileNotFoundError:
+        print("Common passwords file not found.")
+        return False
