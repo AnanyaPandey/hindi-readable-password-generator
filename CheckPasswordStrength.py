@@ -46,8 +46,12 @@ def format_number(number):
         return str(number)
     elif number < 1000000:
         return f"{number / 1000:.1f} Thousand"
-    else:
-        return f"{number / 1000000:.1f} Million"
+    elif number < 1000000000:
+        return f"{number / 10000000:.1f} Million"
+    elif number < 1000000000000:
+        return f"{number/ 10000000000:.1f} Billion"
+    else :
+        return f"{number/1000000000000:.1f} Trillion"
 
 def is_common_password(password):
     try:
@@ -74,5 +78,6 @@ def estimate_crack_time(password, attempts_per_second=1000000000):
     # Convert seconds to years
     seconds_in_a_year = 60 * 60 * 24 * 365.25
     years_to_crack = seconds_to_crack / seconds_in_a_year
+    #years_to_crack = years_to_crack/100
     
     return round(years_to_crack)
