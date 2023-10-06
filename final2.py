@@ -9,33 +9,19 @@ import os
 # List of Hindi words transliterated to English (you can extend this list)
 hindi_words_transliterated = [
     "Sundar", "Sukha", "Pyaara", "Chhota", "Mota", "Bura", "Khoobsurat",
-    "Swasth", "Garib", "Ameer", "Shant", "Jhulta", "Majedar", "Garam",
+    "Swasth", "Garib", "Ameer", "Nanga", "Jhulta", "Majedar", "Garam",
     "Thanda", "Naya", "Purana", "Lal", "Hara", "Neela", "Safed", "Kala",
-    "Sukhi", "Dhaniya", "Lamba", "Samridh", "Sachcha", "Jhoota", "Sharif",
-    "Tez", "Teekha", "Udta", "Langda", "Jhagdalu", "Budbak", "Gaddar", "Bhutiya"
+    "Sukha", "Dhaniya", "Lamba", "Samridh", "Sachcha", "Jhoota", "Sharif",
+    "Tez", "Teekha", "Udta", "Langda", "Jhagdalu", "Budbak", "Gaddar", "Bhutiya",
+    "Chulbul","Bhukkad","Peela","Lambu","Namkeen","Shaana"
 ]
 
 hindi_words_transliterated2 = [
-    "Kanya",  # Love (Noun)
-    "Talwar",  # Happiness (Noun)
-    "Teer",  # Journey (Noun)
-    "Tyagi",  # Heart (Noun)
-    "Chhatri",  # Weather (Noun)
-    "Maal",  # Life (Noun)
-    "Rasta",  # Roads (Noun)
-    "Mazdur",  # World (Noun)
-    "kitab",  # Book (Noun)
-    "kaagaz",  # Paper (Noun)
-    "kursi",  # Chair (Noun)
-    "botal",  # Bottle (Noun)
-    "raja",  # King (Gangster Name)
-    "don",  # Don (Gangster Name)
-    "bhai",  # Brother (Gangster Name)
-    "Shakeel",  # The Biggest (Gangster Name)
-    "gunda",  # Goon (Gangster Name)
-    "Aurat",  # Lioness (Gangster Name)
-    "Panchi",  # God (Gangster Name)
-    "Khidki", "Darwaza", "Mahal", "Gulaab"
+    "Kanya", "Talwar", "Teer", "Tyagi", "Chhatri", "Pappu","Hira",
+    "Maal", "Rasta", "Mazdur", "kitab", "kaagaz", "Tubelight","Moza",
+    "kursi", "botal", "raja", "don", "bhai", "Sipahi","Bijli","Jhola",
+    "Shakeel", "gunda", "Aurat", "Panchi", "Chaman","Mogambo","Pustak"
+    "Khidki", "Darwaza", "Mahal", "Gulaab","Kachra","Paanwala"
 ]
 
 
@@ -58,7 +44,8 @@ def generate_strong_password(password_length):
 
     word1 = replace_characters(word1).capitalize()
     word2 = replace_characters(word2).capitalize()
-
+    readable = f"{word1} {word2}"
+    
     digit = random.choice(string.digits)
     special_char = random.choice(string.punctuation)
 
